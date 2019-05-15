@@ -1,0 +1,23 @@
+{% extends 'base.html %}
+
+{% block content %}
+    <p>
+        <a href="{% url 'pessoa_add' %}" class="btn btn-primary">Cadastrar Pessoa</a>
+    </p>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Dt. Nascimento</th>
+                <th>Nm. Mãe</th>
+            </tr>
+        </thead>
+        {% for Pessoa in Pessoa %}
+        <tr>
+            <td><a href="{% url  %}"></a></td>
+            <td></td>
+        </tr>
+        <tbody>
+        </tbody>
+    </table>
+{% endblock %}
