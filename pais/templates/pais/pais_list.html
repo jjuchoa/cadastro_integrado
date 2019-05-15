@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <p>
+    <a href="{% url 'pais_add' %}" class="btn btn-primary">Adicionar</a>
+  </p>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Codigo</th>
+        <th>Descrição</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for pais in pais %}
+        <tr>
+          <td><a href="{% url 'pais_edit' pais.pk %}">{{ pais.name }}</a></td>
+          <td>{{ pais.codPais }}</td>
+        </tr>
+      {% empty %}
+        <tr class="table-active">
+          <td colspan="3">No data</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
