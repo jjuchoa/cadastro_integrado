@@ -9,7 +9,7 @@ from pessoa.models import Pessoa
 class PessoaForm(forms.ModelForm):
     class Meta:
         Model = Pessoa
-        fields = ('tipo_cadastro', 'nome', 'telefone', 'celular', 'email', 'ativo',)
+        fields = ('tipo_cadastro', 'nome', 'telefone', 'celular', 'email', 'ativo')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

@@ -1,8 +1,9 @@
 from django.db import models
-# from endereco.models import endereco
+
+from estado.models import Estado
 
 
-# class cidade(endereco):
-class Cidade():
+class Cidade(models.Model):
+    estado = models.ForeignKey(Estado, verbose_name=u"estado", on_delete=models.CASCADE)
     cidade = models.CharField(verbose_name=u"cidade", max_length=200)
-    numIbge = models.IntegerField(verbose_name=u"Número do IBGE", max_length=200)
+    numIbge = models.IntegerField(verbose_name=u"Número do IBGE")

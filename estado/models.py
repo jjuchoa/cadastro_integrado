@@ -1,7 +1,8 @@
 from django.db import models
-# from endereco.models import endereco
+
+from pais.models import Pais
 
 
-# class estado(endereco):
-class Estado():
+class Estado(models.Model):
+    pais = models.ForeignKey(Pais, verbose_name=u"pais", on_delete=models.CASCADE)
     estado = models.CharField(verbose_name=u"estado", max_length=200)

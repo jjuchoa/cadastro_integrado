@@ -39,18 +39,18 @@ INSTALLED_APPS = [
 
     'crispy_forms',
 
-    # 'pessoa',
-    # 'pessoa_fisica',
-    # 'pessoa_juridica',
-    # 'tipo_logradouro',
-    # 'nome_logradouro',
-    # 'logradouro',
-    # 'bairro',
-    # 'cep',
-    # 'cidade',
-    # 'estado',
+    'pessoa',
+    'pessoafisica',
+    'pessoajuridica',
+    'tipo_logradouro',
+    'nome_logradouro',
+    'logradouro',
+    'bairro',
+    'cep',
+    'cidade',
+    'estado',
     'pais',
-    # 'endereco',
+    'endereco',
 ]
 
 MIDDLEWARE = [
