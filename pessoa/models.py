@@ -1,3 +1,4 @@
+
 from django.db import models
 
 from endereco.models import Endereco
