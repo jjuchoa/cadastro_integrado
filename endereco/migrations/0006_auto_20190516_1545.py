@@ -30,7 +30,7 @@ class Migration(migrations.Migration):
         ),
         migrations.AlterField(
             model_name='endereco',
-            name='pais',
-            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='pais.Pais', verbose_name='pais'),
+            name='estado',
+            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='estado.Pais', verbose_name='estado'),
         ),
     ]

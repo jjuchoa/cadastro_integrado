@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('pais', '0004_pais'),
+        ('estado', '0004_pais'),
         ('endereco', '0003_delete_endereco'),
     ]
 
@@ -19,7 +19,7 @@ class Migration(migrations.Migration):
             fields=[
                 ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
                 ('numero', models.IntegerField(verbose_name='Número')),
-                ('pais', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='pais.Pais')),
+                ('estado', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='estado.Pais')),
             ],
         ),
     ]

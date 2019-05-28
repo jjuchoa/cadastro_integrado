@@ -12,7 +12,7 @@ class PaisListView(ListView):
 
 class PaisCreateView(CreateView):
     model = Pais
-    fields = ('pais', 'codPais')
+    fields = ('codPais', 'nome')
     success_url = reverse_lazy('pais_list')
 
 

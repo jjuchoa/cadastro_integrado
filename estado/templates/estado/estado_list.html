@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
 
 {% block content %}
-  <h2 class="mt-2">Cadastro de País</h2>
+  <h2 class="mt-2">Cadastro de Estado</h2>
   <hr class="mt-0 mb-4">
   <p>
-    <a href="{% url 'pais_add' %}" class="btn btn-primary">Adicionar</a>
+    <a href="{% url 'estado_add' %}" class="btn btn-primary">Adicionar</a>
   </p>
   <table class="table table-bordered">
     <thead>
       <tr>
-        <th>Codigo</th>
-        <th>Descrição</th>
+        <th>Estado</th>
+        <th>País</th>
       </tr>
     </thead>
     <tbody>
-      {% for pais in pais %}
+      {% for estado in estado %}
         <tr>
-          <td><a href="{% url 'pais_edit' pais.pk %}">{{ pais.nome }}</a></td>
-          <td>{{ pais.codPais }}</td>
+          <td><a href="{% url 'estado_edit' estado.pk %}">{{ estado.nome }}</a></td>
+          <td>{{ estado.pais }}</td>
         </tr>
       {% empty %}
         <tr class="table-active">

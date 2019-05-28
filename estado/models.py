@@ -1,8 +1,15 @@
 from django.db import models
+from django.forms import ModelForm
 
 from pais.models import Pais
 
 
 class Estado(models.Model):
-    pais = models.ForeignKey(Pais, verbose_name=u"pais", on_delete=models.CASCADE)
-    estado = models.CharField(verbose_name=u"estado", max_length=200)
+    pais = models.ForeignKey(Pais, verbose_name=u"País", on_delete=models.CASCADE)
+    nome = models.CharField(verbose_name=u"Descrição", max_length=200)
+
+
+class EstadoForm(ModelForm):
+    class Meta:
+        Model = Estado
+        fields = ('nome', 'pais')

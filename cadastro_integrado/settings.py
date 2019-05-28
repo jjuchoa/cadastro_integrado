@@ -39,18 +39,18 @@ INSTALLED_APPS = [
 
     'crispy_forms',
 
-    'pessoa',
-    'pessoafisica',
-    'pessoajuridica',
-    'tipo_logradouro',
-    'nome_logradouro',
-    'logradouro',
-    'bairro',
-    'cep',
-    'cidade',
-    'estado',
+    # 'pessoa',
+    # 'pessoafisica',
+    # 'pessoajuridica',
+    # 'tipo_logradouro',
+    # 'nome_logradouro',
+    # 'logradouro',
+    # 'bairro',
+    # 'cep',
+    # 'cidade',
     'pais',
-    'endereco',
+    'estado',
+    # 'endereco',
 ]
 
 MIDDLEWARE = [
@@ -132,6 +132,9 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
 
 STATIC_URL = '/static/'
 

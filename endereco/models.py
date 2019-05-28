@@ -9,7 +9,7 @@ from logradouro.models import Logradouro
 
 
 class Endereco(models.Model):
-    pais = models.ForeignKey(Pais, verbose_name=u"pais", on_delete=models.CASCADE)
+    pais = models.ForeignKey(Pais, verbose_name=u"estado", on_delete=models.CASCADE)
     estado = models.ForeignKey(Estado, verbose_name=u"estado", on_delete=models.CASCADE, null=True)
     cidade = models.ForeignKey(Cidade, verbose_name=u"cidade", on_delete=models.CASCADE, null=True)
     bairro = models.ForeignKey(Bairro, verbose_name=u"bairro", on_delete=models.CASCADE, null=True)
