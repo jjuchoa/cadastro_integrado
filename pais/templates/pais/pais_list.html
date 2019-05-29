@@ -16,8 +16,8 @@
     <tbody>
       {% for pais in pais %}
         <tr>
-          <td><a href="{% url 'pais_edit' pais.pk %}">{{ pais.nome }}</a></td>
-          <td>{{ pais.codPais }}</td>
+          <td><a href="{% url 'pais_edit' pais.pk %}">{{ pais.codPais }}</a></td>
+          <td>{{ pais.nome }}</td>
         </tr>
       {% empty %}
         <tr class="table-active">

@@ -1,8 +1,7 @@
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
 from estado.models import Estado
-from estado.forms import EstadoForm
 
 
 class EstadoListView(ListView):
@@ -18,6 +17,12 @@ class EstadoCreateView(CreateView):
 
 class EstadoUpdateView(UpdateView):
     model = Estado
-    form_class = EstadoForm
+    fields = ('nome', 'pais')
     template_name = 'estado/estado_update_form.html'
+    success_url = reverse_lazy('estado_list')
+
+
+class EstadoDeleteView(DeleteView):
+    model = Estado
+    template_name = 'estado/estado_delete_form.html'
     success_url = reverse_lazy('estado_list')

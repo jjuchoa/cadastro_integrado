@@ -1,8 +1,7 @@
-from django.views.generic import ListView, CreateView, UpdateView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
 from django.urls import reverse_lazy
 
 from pais.models import Pais
-from pais.forms import PaisForm
 
 
 class PaisListView(ListView):
@@ -18,6 +17,12 @@ class PaisCreateView(CreateView):
 
 class PaisUpdateView(UpdateView):
     model = Pais
-    form_class = PaisForm
+    fields = ('codPais', 'nome')
     template_name = 'pais/pais_update_form.html'
+    success_url = reverse_lazy('pais_list')
+
+
+class PaisDeleteView(DeleteView):
+    model = Pais
+    template_name = 'pais/pais_delete_form.html'
     success_url = reverse_lazy('pais_list')
