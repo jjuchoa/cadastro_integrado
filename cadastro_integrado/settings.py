@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     # 'logradouro',
     # 'bairro',
     # 'cep',
-    # 'cidade',
+    'cidade',
     'pais',
     'estado',
     # 'endereco',

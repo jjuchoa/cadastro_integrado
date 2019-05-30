@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h2 class="mt-2">Cadastro de Cidade</h2>
+  <hr class="mt-0 mb-4">
+  <form method="post" novalidate>
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-6">
+        {{ form.nome|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.numIbge|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.estado|as_crispy_field }}
+      </div>
+    </div>
+    <button type="submit" value="Update" class="btn btn-success">Salvar</button>
+    <a href="{% url 'cidade_delete' cidade.pk %}" class="btn btn-danger">Excluir</a>
+    <a href="{% url 'cidade_list' %}" class="btn btn-primary">Cancelar</a>
+  </form>
+{% endblock %}

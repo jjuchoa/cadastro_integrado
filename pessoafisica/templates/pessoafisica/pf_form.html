@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h2 class="mt-2">Cadastro de Pessoa Física</h2>
+  <hr class="mt-0 mb-4">
+  <form method="post" novalidate>
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-6">
+        {{ form.pessoa|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.cpf|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.rg|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.dtNasc|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.nomePai|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.nomeMae|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.respFinanc|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.matricula|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.salario|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.comissao|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.contratado|as_crispy_field }}
+      </div>
+    </div>
+    <button type="submit" value="Save" class="btn btn-success">Salvar</button>
+    <a href="{% url 'pf_list' %}" class="btn btn-primary">Cancelar</a>
+  </form>
+{% endblock %}

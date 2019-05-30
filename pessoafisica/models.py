@@ -1,4 +1,5 @@
 from django.db import models
+from django.forms import ModelForm
 
 from pessoa.models import Pessoa
 
@@ -15,3 +16,10 @@ class PessoaFisica(models.Model):
     salario = models.CharField(verbose_name=u"Salário", max_length=100)
     comissao = models.CharField(verbose_name=u"Comissão", max_length=100)
     contratado = models.CharField(verbose_name=u"Contratado", max_length=100)
+
+
+class EstadoForm(ModelForm):
+    class Meta:
+        Model = PessoaFisica
+        fields = ('pessoa', 'cpf', 'rg', 'dtNasc', 'nomePai', 'nomeMae',
+                  'respFinanc', 'matricula', 'salario', 'comissao', 'contratado')

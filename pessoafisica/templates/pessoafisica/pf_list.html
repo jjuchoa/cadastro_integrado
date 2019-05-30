@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2 class="mt-2">Cadastro de Pessoa Física</h2>
+  <hr class="mt-0 mb-4">
+  <p>
+    <a href="{% url 'pf_add' %}" class="btn btn-primary">Adicionar</a>
+  </p>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Código</th>
+        <th>Nome</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for pessoa in pessoa %}
+        <tr>
+          <td><a href="{% url 'pf_edit' pessoa.pk %}">{{ pessoa.id }}</a></td>
+          <td>{{ pessoa.nome }}</td>
+        </tr>
+      {% empty %}
+        <tr class="table-active">
+          <td colspan="3">No data</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

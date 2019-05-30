@@ -1,5 +1,5 @@
-
 from django.db import models
+from django.forms import ModelForm
 
 from endereco.models import Endereco
 
@@ -18,10 +18,19 @@ class Pessoa(models.Model):
     )
 
     # ESCOLHAS
-    endereco = models.ForeignKey(Endereco, verbose_name=u"Endereço", on_delete=models.CASCADE)
+    # endereco = models.ForeignKey(Endereco, verbose_name=u"Endereço", on_delete=models.CASCADE)
     tipoCadastro = models.CharField(choices=TYPE_CAD, verbose_name=u"Tipo de Cadastro", max_length=4)
     nome = models.CharField(verbose_name=u"Nome", max_length=200)
     telefone = models.CharField(verbose_name=u"Telefone", max_length=15)
     celular = models.CharField(verbose_name=u"Celular", max_length=15)
     email = models.EmailField(verbose_name=u"Email")
     ativo = models.BooleanField(verbose_name=u"Ativo?", blank=True)
+
+    def __str__(self):
+        return self.nome
+
+
+class PaisForm(ModelForm):
+    class Meta:
+        Model = Pessoa
+        fields = ('tipoCadastro', 'nome', 'telefone', 'celular', 'email', 'ativo')
