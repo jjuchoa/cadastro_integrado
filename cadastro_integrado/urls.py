@@ -5,6 +5,7 @@ from django.contrib import admin
 from pais.views import PaisListView, PaisCreateView, PaisUpdateView, PaisDeleteView
 from estado.views import EstadoListView, EstadoCreateView, EstadoUpdateView, EstadoDeleteView
 from cidade.views import CidadeListView, CidadeCreateView, CidadeUpdateView, CidadeDeleteView
+from bairro.views import BairroListView, BairroCreateView, BairroUpdateView, BairroDeleteView
 from django.views.generic import TemplateView
 
 
@@ -22,5 +23,9 @@ urlpatterns = [
     path('cidadeadd/', CidadeCreateView.as_view(), name='cidade_add'),
     path('<int:pk>/cidadeedit/', CidadeUpdateView.as_view(), name='cidade_edit'),
     path('<int:pk>/cidadedelete/', CidadeDeleteView.as_view(), name='cidade_delete'),
+    path('bairrolist/', BairroListView.as_view(), name='bairro_list'),
+    path('bairroadd/', BairroCreateView.as_view(), name='bairro_add'),
+    path('<int:pk>/bairroedit/', BairroUpdateView.as_view(), name='bairro_edit'),
+    path('<int:pk>/bairrodelete/', BairroDeleteView.as_view(), name='bairro_delete'),
     path('admin/', admin.site.urls),
 ]

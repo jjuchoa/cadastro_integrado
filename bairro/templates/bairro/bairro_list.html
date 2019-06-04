@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2 class="mt-2">Cadastro de Bairro</h2>
+  <hr class="mt-0 mb-4">
+  <p>
+    <a href="{% url 'bairro_add' %}" class="btn btn-primary">Adicionar</a>
+  </p>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Bairro</th>
+        <th>Cidade</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for bairro in bairro %}
+        <tr>
+          <td><a href="{% url 'bairro_edit' bairro.pk %}">{{ bairro.nome }}</a></td>
+          <td>{{ bairro.cidade }}</td>
+        </tr>
+      {% empty %}
+        <tr class="table-active">
+          <td colspan="3">No data</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

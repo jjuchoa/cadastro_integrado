@@ -9,8 +9,11 @@ class Cidade(models.Model):
     nome = models.CharField(verbose_name=u"cidade", max_length=200)
     numIbge = models.IntegerField(verbose_name=u"Número do IBGE")
 
+    def __str__(self):
+        return self.nome
 
-class EstadoForm(ModelForm):
+
+class CidadeForm(ModelForm):
     class Meta:
         Model = Cidade
         fields = ('nome', 'numIbge', 'estado')
