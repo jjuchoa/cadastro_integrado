@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2 class="mt-2">Cadastro de Tipo do Logradouro</h2>
+  <hr class="mt-0 mb-4">
+  <p>
+    <a href="{% url 'tipologradouro_add' %}" class="btn btn-primary">Adicionar</a>
+  </p>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nome</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tipologradouro in tipologradouro %}
+        <tr>
+          <td><a href="{% url 'tipologradouro_edit' tipologradouro.pk %}">{{ tipologradouro.nome }}</a></td>
+        </tr>
+      {% empty %}
+        <tr class="table-active">
+          <td colspan="3">No data</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

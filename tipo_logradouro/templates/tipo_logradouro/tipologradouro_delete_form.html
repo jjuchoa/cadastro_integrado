@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h2 class="mt-2">Cadastro de Tipo do Logradouro</h2>
+  <hr class="mt-0 mb-4">
+  <form method="post" novalidate>
+    {% csrf_token %}
+    <p>Confirma a exclusão do registro "{{ object.nome }}"?</p>
+    <button type="submit" value="Confirm" class="btn btn-danger">Confirmar</button>
+    <a href="{% url 'tipologradouro_list' %}" class="btn btn-secondary">Cancelar</a>
+  </form>
+{% endblock %}

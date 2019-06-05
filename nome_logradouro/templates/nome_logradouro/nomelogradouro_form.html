@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h2 class="mt-2">Cadastro de Nome do Logradouro</h2>
+  <hr class="mt-0 mb-4">
+  <form method="post" novalidate>
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-6">
+        {{ form.nome|as_crispy_field }}
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <a href="{% url 'nomelogradouro_list' %}" class="btn btn-primary">Cancelar</a>
+  </form>
+{% endblock %}
