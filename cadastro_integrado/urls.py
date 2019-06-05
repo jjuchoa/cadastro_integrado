@@ -6,8 +6,12 @@ from pais.views import PaisListView, PaisCreateView, PaisUpdateView, PaisDeleteV
 from estado.views import EstadoListView, EstadoCreateView, EstadoUpdateView, EstadoDeleteView
 from cidade.views import CidadeListView, CidadeCreateView, CidadeUpdateView, CidadeDeleteView
 from bairro.views import BairroListView, BairroCreateView, BairroUpdateView, BairroDeleteView
-from tipo_logradouro.views import TipoLogradouroListView, TipoLogradouroCreateView, TipoLogradouroUpdateView, TipoLogradouroDeleteView
-from nome_logradouro.views import NomeLogradouroListView, NomeLogradouroCreateView, NomeLogradouroUpdateView, NomeLogradouroDeleteView
+from tipo_logradouro.views import TipoLogradouroListView, TipoLogradouroCreateView,\
+    TipoLogradouroUpdateView, TipoLogradouroDeleteView
+from nome_logradouro.views import NomeLogradouroListView, NomeLogradouroCreateView,\
+    NomeLogradouroUpdateView, NomeLogradouroDeleteView
+from logradouro.views import LogradouroListView, LogradouroCreateView, LogradouroUpdateView, LogradouroDeleteView
+
 
 from django.views.generic import TemplateView
 
@@ -44,6 +48,11 @@ urlpatterns = [
     path('nomelogradouroadd/', NomeLogradouroCreateView.as_view(), name='nomelogradouro_add'),
     path('<int:pk>/nomelogradouroedit/', NomeLogradouroUpdateView.as_view(), name='nomelogradouro_edit'),
     path('<int:pk>/nomelogradourodelete/', NomeLogradouroDeleteView.as_view(), name='nomelogradouro_delete'),
+
+    path('logradourolist/', LogradouroListView.as_view(), name='logradouro_list'),
+    path('logradouroadd/', LogradouroCreateView.as_view(), name='logradouro_add'),
+    path('<int:pk>/logradouroedit/', LogradouroUpdateView.as_view(), name='logradouro_edit'),
+    path('<int:pk>/logradourodelete/', LogradouroDeleteView.as_view(), name='logradouro_delete'),
 
     path('admin/', admin.site.urls),
 ]

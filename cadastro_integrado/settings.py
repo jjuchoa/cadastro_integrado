@@ -44,7 +44,7 @@ INSTALLED_APPS = [
     # 'pessoajuridica',
     'tipo_logradouro',
     'nome_logradouro',
-    # 'logradouro',
+    'logradouro',
     'bairro',
     # 'cep',
     'cidade',

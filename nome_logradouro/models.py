@@ -3,7 +3,7 @@ from django.forms import ModelForm
 
 
 class NomeLogradouro(models.Model):
-    nome = models.CharField(verbose_name=u"Tipo do logradouro", max_length=50)
+    nome = models.CharField(verbose_name=u"Nome do logradouro", max_length=50)
 
     def __str__(self):
         return self.nome
