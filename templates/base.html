@@ -36,10 +36,18 @@
                     <a class="nav-link disabled" href="#">Desativado</a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Permissões
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink1">
+                        <a class="dropdown-item" href="{% url 'user_list' %}">Usuário</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Cadastros
                     </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
                         <a class="dropdown-item" href="{% url 'pais_list' %}">País</a>
                         <a class="dropdown-item" href="{% url 'estado_list' %}">Estado</a>
                         <a class="dropdown-item" href="{% url 'cidade_list' %}">Cidade</a>
@@ -47,7 +55,7 @@
                         <a class="dropdown-item" href="{% url 'tipologradouro_list' %}">Tipo de Logradouro</a>
                         <a class="dropdown-item" href="{% url 'nomelogradouro_list' %}">Nome do Logradouro</a>
                         <a class="dropdown-item" href="{% url 'logradouro_list' %}">Logradouro</a>
-                        <a class="dropdown-item" href="#">Cep</a>
+                        <a class="dropdown-item" href="{% url 'endereco_list' %}">Endereço</a>
                     </div>
                 </li>
             </ul>

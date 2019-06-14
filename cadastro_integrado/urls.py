@@ -11,6 +11,8 @@ from tipo_logradouro.views import TipoLogradouroListView, TipoLogradouroCreateVi
 from nome_logradouro.views import NomeLogradouroListView, NomeLogradouroCreateView,\
     NomeLogradouroUpdateView, NomeLogradouroDeleteView
 from logradouro.views import LogradouroListView, LogradouroCreateView, LogradouroUpdateView, LogradouroDeleteView
+from endereco.views import EnderecooListView, EnderecoCreateView, EnderecoUpdateView, EnderecoDeleteView
+from autenticacao.views import AuthUserListView, AuthUserCreateView, AuthUserUpdateView, AuthUserDeleteView
 
 
 from django.views.generic import TemplateView
@@ -53,6 +55,16 @@ urlpatterns = [
     path('logradouroadd/', LogradouroCreateView.as_view(), name='logradouro_add'),
     path('<int:pk>/logradouroedit/', LogradouroUpdateView.as_view(), name='logradouro_edit'),
     path('<int:pk>/logradourodelete/', LogradouroDeleteView.as_view(), name='logradouro_delete'),
+
+    path('enderecolist/', EnderecooListView.as_view(), name='endereco_list'),
+    path('enderecoadd/', EnderecoCreateView.as_view(), name='endereco_add'),
+    path('<int:pk>/enderecoedit/', EnderecoUpdateView.as_view(), name='endereco_edit'),
+    path('<int:pk>/enderecodelete/', EnderecoDeleteView.as_view(), name='endereco_delete'),
+
+    path('userlist/', AuthUserListView.as_view(), name='user_list'),
+    path('useradd/', AuthUserCreateView.as_view(), name='user_add'),
+    path('<int:pk>/useredit/', AuthUserUpdateView.as_view(), name='user_edit'),
+    path('<int:pk>/userdelete/', AuthUserDeleteView.as_view(), name='user_delete'),
 
     path('admin/', admin.site.urls),
 ]

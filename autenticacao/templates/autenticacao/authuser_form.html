@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+  <h2 class="mt-2">Cadastro de Usuário</h2>
+  <hr class="mt-0 mb-4">
+  <form method="post" novalidate>
+    {% csrf_token %}
+    <div class="row">
+      <div class="col-6">
+        {{ form.first_name|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.last_name|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.username|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.email|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.password|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.last_login|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.is_superuser|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.is_staff|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.is_active|as_crispy_field }}
+      </div>
+      <div class="col-6">
+        {{ form.date_joined|as_crispy_field }}
+      </div>
+    </div>
+    <button type="submit" class="btn btn-success">Salvar</button>
+    <a href="{% url 'user_list' %}" class="btn btn-primary">Cancelar</a>
+  </form>
+{% endblock %}

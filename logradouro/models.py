@@ -12,8 +12,7 @@ class Logradouro(models.Model):
     nomeLogradouro = models.ForeignKey(NomeLogradouro, verbose_name=u"Nome do logradouro", on_delete=models.CASCADE)
 
     def logradouro(self):
-        return '%s %s' % (self.tipoLogradouro, self.nomeLogradouro)
-
+        return '{} {} {}'.format(self.tipoLogradouro, self.nomeLogradouro, self.bairro)
 
 
 class EstadoForm(ModelForm):

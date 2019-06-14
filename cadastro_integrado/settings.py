@@ -46,11 +46,11 @@ INSTALLED_APPS = [
     'nome_logradouro',
     'logradouro',
     'bairro',
-    # 'cep',
     'cidade',
     'pais',
     'estado',
-    # 'endereco',
+    'endereco',
+    'autenticacao',
 ]
 
 MIDDLEWARE = [

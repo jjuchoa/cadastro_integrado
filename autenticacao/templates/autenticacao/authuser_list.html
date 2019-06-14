@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2 class="mt-2">Cadastro de Usuário</h2>
+  <hr class="mt-0 mb-4">
+  <p>
+    <a href="{% url 'user_add' %}" class="btn btn-primary">Adicionar</a>
+  </p>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>first_name</th>
+        <th>last_name</th>
+        <th>username</th>
+        <th>email</th>
+        <th>password</th>
+        <th>last_login</th>
+        <th>is_superuser</th>
+        <th>is_staff</th>
+        <th>is_active</th>
+        <th>date_joined</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for user in user %}
+        <tr>
+          <td><a href="{% url 'user_edit' user.pk %}">{{ user.first_name }}</a></td>
+          <td>{{ user.last_name }}</td>
+          <td>{{ user.username }}</td>
+          <td>{{ user.email }}</td>
+          <td>{{ user.password }}</td>
+          <td>{{ user.last_login }}</td>
+          <td>{{ user.is_superuser }}</td>
+          <td>{{ user.is_staff }}</td>
+          <td>{{ user.is_active }}</td>
+          <td>{{ user.date_joined }}</td>
+        </tr>
+      {% empty %}
+        <tr class="table-active">
+          <td colspan="3">No data</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}
