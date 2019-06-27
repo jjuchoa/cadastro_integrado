@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, include
 
 from django.contrib import admin
 
@@ -20,6 +20,8 @@ from django.views.generic import TemplateView
 
 urlpatterns = [
     path('', TemplateView.as_view(template_name="home.html"), name='home'),
+    path('admin/', admin.site.urls),
+    path('account/', include('django.contrib.auth.urls')),
 
     path('paislist/', PaisListView.as_view(), name='pais_list'),
     path('paisadd/', PaisCreateView.as_view(), name='pais_add'),
@@ -66,5 +68,4 @@ urlpatterns = [
     path('<int:pk>/useredit/', AuthUserUpdateView.as_view(), name='user_edit'),
     path('<int:pk>/userdelete/', AuthUserDeleteView.as_view(), name='user_delete'),
 
-    path('admin/', admin.site.urls),
 ]
