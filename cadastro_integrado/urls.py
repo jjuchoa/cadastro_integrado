@@ -12,16 +12,13 @@ from nome_logradouro.views import NomeLogradouroListView, NomeLogradouroCreateVi
     NomeLogradouroUpdateView, NomeLogradouroDeleteView
 from logradouro.views import LogradouroListView, LogradouroCreateView, LogradouroUpdateView, LogradouroDeleteView
 from endereco.views import EnderecooListView, EnderecoCreateView, EnderecoUpdateView, EnderecoDeleteView
-from autenticacao.views import AuthUserListView, AuthUserCreateView, AuthUserUpdateView, AuthUserDeleteView
-
-
-from django.views.generic import TemplateView
+from autenticacao.views import AuthUserListView, AuthUserCreateView, AuthUserUpdateView, AuthUserDeleteView, HomeView
 
 
 urlpatterns = [
-    path('', TemplateView.as_view(template_name="home.html"), name='home'),
     path('admin/', admin.site.urls),
     path('account/', include('django.contrib.auth.urls')),
+    path('', HomeView.as_view(), name='home'),
 
     path('paislist/', PaisListView.as_view(), name='pais_list'),
     path('paisadd/', PaisCreateView.as_view(), name='pais_add'),

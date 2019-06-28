@@ -1,7 +1,10 @@
-from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView, TemplateView
 from django.urls import reverse_lazy
-
 from autenticacao.models import AuthUser
+
+
+class HomeView(TemplateView):
+    template_name = "home.html"
 
 
 class AuthUserListView(ListView):
