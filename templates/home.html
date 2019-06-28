@@ -1,7 +1,7 @@
 {% block content %}
-{% if user.is_authenticated %}
-{% include 'index.html' %}
-{% else %}
-<META http-equiv="refresh" content="0;URL=/account/login/">
-{% endif %}
+    {% if user.is_authenticated %}
+        {% include 'index.html' %}
+    {% else %}
+        <META http-equiv="refresh" content="0;URL=/account/login/">
+    {% endif %}
 {% endblock %}
