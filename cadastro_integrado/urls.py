@@ -1,7 +1,5 @@
 from django.urls import path, include
-
 from django.contrib import admin
-
 from pais.views import PaisListView, PaisCreateView, PaisUpdateView, PaisDeleteView
 from estado.views import EstadoListView, EstadoCreateView, EstadoUpdateView, EstadoDeleteView
 from cidade.views import CidadeListView, CidadeCreateView, CidadeUpdateView, CidadeDeleteView
